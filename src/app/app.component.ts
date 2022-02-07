@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  display = 'samples';
+  display = '';
 
-  handleClick(value: number) {
-    this.display = '' + value;
+  handleClick(value: number | string) {
+    this.display += value;
   }  
 }
