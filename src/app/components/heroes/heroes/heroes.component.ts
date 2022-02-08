@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroesComponent implements OnInit {
 
+  heroes = ['Batman', 'Superman', 'Spiderman'];
+  heroName = '';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addHero() {
+    this.heroes.push(this.heroName);
+    this.heroName = '';
   }
 
 }

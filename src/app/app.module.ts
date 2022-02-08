@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DisplayComponent } from './components/calculator/display/display.component';
 import { KeyboardComponent } from './components/calculator/keyboard/keyboard.component';
 import { HeroesComponent } from './components/heroes/heroes/heroes.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HeroesComponent } from './components/heroes/heroes/heroes.component';
   imports: [
     BrowserModule,
     NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
