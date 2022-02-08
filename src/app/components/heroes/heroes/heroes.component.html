@@ -3,7 +3,7 @@
       <label for="">Hero name</label>
       <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" [(ngModel)]="heroName">
     </div>
-    <button type="button" class="btn btn-primary" (click)="addHero()">Add Hero</button>
+    <button type="button" [class]="myClass" (click)="addHero()" [disabled]="IsHeroNameEmpty()">Add Hero</button>
     <hr class="my-3">
     <ul class="list-group">
         <li class="list-group-item" *ngFor="let hero of heroes">{{hero}}</li>

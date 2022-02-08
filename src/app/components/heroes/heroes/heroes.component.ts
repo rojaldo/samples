@@ -9,6 +9,7 @@ export class HeroesComponent implements OnInit {
 
   heroes = ['Batman', 'Superman', 'Spiderman'];
   heroName = '';
+  myClass = 'btn btn-primary';
 
   constructor() { }
 
@@ -18,6 +19,10 @@ export class HeroesComponent implements OnInit {
   addHero() {
     this.heroes.push(this.heroName);
     this.heroName = '';
+  }
+
+  IsHeroNameEmpty(): boolean {
+    return this.heroName === '';
   }
 
 }
