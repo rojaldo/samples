@@ -8,21 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class HeroesComponent implements OnInit {
 
   heroes = ['Batman', 'Superman', 'Spiderman'];
-  heroName = '';
-  myClass = 'btn btn-primary';
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  addHero() {
-    this.heroes.push(this.heroName);
-    this.heroName = '';
+  addHero(heroName: string) {
+    this.heroes.push(heroName);
   }
 
-  IsHeroNameEmpty(): boolean {
-    return this.heroName === '';
-  }
 
 }
