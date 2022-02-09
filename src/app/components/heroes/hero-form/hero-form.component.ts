@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Hero } from 'src/app/model/hero';
 
 @Component({
   selector: 'app-hero-form',
@@ -7,9 +8,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class HeroFormComponent implements OnInit {
 
-  @Output() onNewHero = new EventEmitter<string>();
+  @Output() onNewHero = new EventEmitter<Hero>();
 
-  heroName = '';
+  hero = new Hero('', '');
   myClass = 'btn btn-primary';
 
   constructor() { }
@@ -18,12 +19,12 @@ export class HeroFormComponent implements OnInit {
   }
 
   addHero() {
-    this.onNewHero.emit(this.heroName);
-    this.heroName = '';
+    this.onNewHero.emit(this.hero);
+    this.hero = new Hero('', '');
   }
 
   IsHeroNameEmpty(): boolean {
-    return this.heroName === '';
+    return this.hero.emptyName();
   }
 
 }

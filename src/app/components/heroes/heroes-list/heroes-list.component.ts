@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Hero } from 'src/app/model/hero';
 
 @Component({
   selector: 'app-heroes-list',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeroesListComponent implements OnInit {
 
-  @Input() myHeroes: string[] = [];
+  @Input() myHeroes: Hero[] = [];
 
   constructor() { }
 
