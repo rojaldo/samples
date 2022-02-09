@@ -16,6 +16,7 @@ export class HeroesComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     console.log('HeroesComponent.ngOnInit()');
     this.heroes = this.service.getHeroes();
+    this.service.heroes$.subscribe(heroes => this.heroes = heroes);
   }
 
   ngOnDestroy(): void {
@@ -24,7 +25,7 @@ export class HeroesComponent implements OnInit, OnDestroy {
 
   addHero(hero: Hero) {
     this.service.addHero(hero);
-    this.heroes = this.service.getHeroes();
+    // this.heroes = this.service.getHeroes();
   }
 
 

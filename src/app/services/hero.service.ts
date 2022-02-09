@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Hero } from '../model/hero';
 
 @Injectable()
@@ -9,6 +10,9 @@ export class HeroService {
     new Hero('Batman', 'Bruce Wayne'),
     new Hero('Spiderman', 'Peter Parker'),
   ];
+
+  // BehaviorSubject for heroes
+  heroes$ = new BehaviorSubject<Hero[]>(this.heroes);
 
   constructor() { }
 
