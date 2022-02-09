@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApodService } from 'src/app/services/apod.service';
 import { Observer } from 'rxjs';
+import { Apod } from 'src/app/model/apod';
 
 @Component({
   selector: 'app-apod',
@@ -9,7 +10,7 @@ import { Observer } from 'rxjs';
 })
 export class ApodComponent implements OnInit {
 
-  data = {};
+  data = new Apod();
 
   constructor(private service: ApodService) { }
 
@@ -18,7 +19,7 @@ export class ApodComponent implements OnInit {
     let observer: Observer<any>;
     observer = {
       next: (data) => {
-        this.data = data;
+        this.data = new Apod(data);
         console.log(data);
       },
       error: (err) => {

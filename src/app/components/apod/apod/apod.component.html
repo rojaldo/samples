@@ -1,1 +1,12 @@
-<p>{{data | json}}</p>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-3">{{data.title}}</h1>
+        <p class="lead">{{data.date}}</p>
+        <img [src]="data.url" class="w-100" [alt]="data.title">
+        <hr class="my-2">
+        <p>{{data.explanation}}</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" [href]="data.hdurl" role="button">Jumbo action name</a>
+        </p>
+    </div>
+</div>
