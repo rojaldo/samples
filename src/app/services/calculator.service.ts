@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs';
+import { BehaviorSubject, throwError } from 'rxjs';
 
 enum State {
   Init,
@@ -16,8 +16,12 @@ export class CalculatorService {
   private secondFigure = 0;
   private result = 0;
   private operator = '';
+  // BehaviorSubject for display
+  display$ = new BehaviorSubject<string>(this.display);
 
-  constructor() { }
+  constructor() {
+    
+  }
 
   get displayValue(): string {
     return this.display;
@@ -106,11 +110,14 @@ export class CalculatorService {
   }
 
   process(value: number | string): string {
+    console.log('CalculatorService.process() ' + value);
+    
     if (typeof value === 'number') {
       this.handleNumber(value);
     } else if (typeof value === 'string') {
       this.handleSymbol(value);
     }
+    
     return this.display;
   }
 

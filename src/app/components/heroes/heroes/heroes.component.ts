@@ -20,6 +20,8 @@ export class HeroesComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    // unsubscribe from the observable
+    // this.service.heroes$.unsubscribe();
     console.log('HeroesComponent.ngOnDestroy()');
   }
 
