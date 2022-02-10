@@ -1,7 +1,9 @@
 <ul class="list-group">
-    <li class="list-group-item" *ngFor="let hero of myHeroes">
+    <li class="list-group-item" *ngFor="let hero of myHeroes; let i=index">
         <b>{{hero.getName()}}</b>
         <br>
         <small>{{hero.getAlias()}}</small>
+        <br>
+        <button type="button" class="btn btn-danger btn-small mt-2" (click)="removeHero(i)">Remove Hero</button>
     </li>
 </ul>

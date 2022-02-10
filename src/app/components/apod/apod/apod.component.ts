@@ -16,20 +16,11 @@ export class ApodComponent implements OnInit {
 
   ngOnInit(): void {
     // declare observer
-    let observer: Observer<any>;
-    observer = {
-      next: (data) => {
-        this.data = new Apod(data);
-        console.log(data);
-      },
-      error: (err) => {
-        console.log(err);
-      },
-      complete: () => {
-        console.log('done');
-      }
-    };
-    this.service.getApod().subscribe(observer);
+    this.service.getApod();
+    this.service.apodData$.subscribe(
+      (data: Apod) => {
+        this.data = data;
+      });
 
   }
 

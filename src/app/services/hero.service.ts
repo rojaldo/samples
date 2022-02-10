@@ -23,4 +23,6 @@ export class HeroService {
   addHero(hero: Hero) {
     this.heroes.push(hero);
   }
+
+
 }
