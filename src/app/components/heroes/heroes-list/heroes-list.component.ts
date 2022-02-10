@@ -13,6 +13,7 @@ export class HeroesListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
   removeHero(value: number) {

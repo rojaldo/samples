@@ -1,0 +1,13 @@
+<div class="jumbotron">
+    <h1 class="display-3">{{data.title}}</h1>
+    <p class="lead">{{data.date}}</p>
+    <img *ngIf="data.isImage()" [src]="data.url" class="w-100" [alt]="data.title">
+    <div class="container-fluid text-center">
+        <youtube-player  *ngIf="data.isVideo()" [videoId]="data.getVideoId()" class="mx-auto" ></youtube-player>
+    </div>
+    <hr class="my-2">
+    <p>{{data.explanation}}</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" [href]="data.hdurl" role="button">Jumbo action name</a>
+    </p>
+</div>
