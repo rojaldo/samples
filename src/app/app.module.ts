@@ -19,6 +19,7 @@ import { ApodShowComponent } from './components/apod/apod-show/apod-show.compone
 import { ApodPickerComponent } from './components/apod/apod-picker/apod-picker.component';
 import { BeersComponent } from './components/beers/beers/beers.component';
 import { ApodService } from './services/apod.service';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { ApodService } from './services/apod.service';
     NgbModule,
     FormsModule,
     HttpClientModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    NgxSliderModule
   ],
   providers: [HeroService, CalculatorService, ApodService],
   bootstrap: [AppComponent]
