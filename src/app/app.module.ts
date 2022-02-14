@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {YouTubePlayerModule} from '@angular/youtube-player';
 import { ApodShowComponent } from './components/apod/apod-show/apod-show.component';
 import { ApodPickerComponent } from './components/apod/apod-picker/apod-picker.component';
+import { BeersComponent } from './components/beers/beers/beers.component';
+import { ApodService } from './services/apod.service';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { ApodPickerComponent } from './components/apod/apod-picker/apod-picker.c
     HeroesListComponent,
     ApodComponent,
     ApodShowComponent,
-    ApodPickerComponent
+    ApodPickerComponent,
+    BeersComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,7 @@ import { ApodPickerComponent } from './components/apod/apod-picker/apod-picker.c
     HttpClientModule,
     YouTubePlayerModule
   ],
-  providers: [HeroService, CalculatorService],
+  providers: [HeroService, CalculatorService, ApodService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

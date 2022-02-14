@@ -5,9 +5,7 @@ import { Apod } from '../model/apod';
 
 const APIKEY = 'tqz634Z1x0LiJzjbhSyUoExrZaGKLM0MG1VnROR6';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ApodService {
 
   readonly observer = {
