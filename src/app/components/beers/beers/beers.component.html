@@ -9,7 +9,7 @@
                 <img class="card-img-top mx-auto mt-2" [src]="beer.imageUrl" alt="" style="width: 60px;">
                 <div class="card-body">
                     <h4 class="card-title">{{beer.name}}</h4>
-                    <h6 >{{beer.abv}}</h6>
+                    <h6 >{{beer.firstBrewed | fromDate}}</h6>
                     <p class="card-text">{{beer.tagline}}</p>
                 </div>
             </div>

@@ -7,7 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DisplayComponent } from './components/calculator/display/display.component';
 import { KeyboardComponent } from './components/calculator/keyboard/keyboard.component';
 import { HeroesComponent } from './components/heroes/heroes/heroes.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeroFormComponent } from './components/heroes/hero-form/hero-form.component';
 import { HeroesListComponent } from './components/heroes/heroes-list/heroes-list.component';
 import { HeroService } from './services/hero.service';
@@ -20,6 +20,12 @@ import { ApodPickerComponent } from './components/apod/apod-picker/apod-picker.c
 import { BeersComponent } from './components/beers/beers/beers.component';
 import { ApodService } from './services/apod.service';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { AbvPipe } from './pipes/abv.pipe';
+import { FromDatePipe } from './pipes/from-date.pipe';
+import { CountriesComponent } from './components/countries/countries/countries.component';
+import { ContainerComponent } from './components/forms/container/container.component';
+import { TemplateValidationComponent } from './components/forms/template-validation/template-validation.component';
+import { ReactiveValidationComponent } from './components/forms/reactive-validation/reactive-validation.component';
 
 
 @NgModule({
@@ -34,7 +40,13 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     ApodComponent,
     ApodShowComponent,
     ApodPickerComponent,
-    BeersComponent
+    BeersComponent,
+    AbvPipe,
+    FromDatePipe,
+    CountriesComponent,
+    ContainerComponent,
+    TemplateValidationComponent,
+    ReactiveValidationComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +54,8 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     FormsModule,
     HttpClientModule,
     YouTubePlayerModule,
-    NgxSliderModule
+    NgxSliderModule,
+    ReactiveFormsModule
   ],
   providers: [HeroService, CalculatorService, ApodService],
   bootstrap: [AppComponent]
