@@ -12,6 +12,10 @@ import { forEachChild } from 'typescript';
 export class CountriesComponent implements OnInit {
 
   countries: any[] = [];
+  error = false;
+  selectedCountry: any;
+  finalCountry: any;
+  borderCountries: string[] = [];
 
   public model: any;
 
@@ -39,6 +43,41 @@ export class CountriesComponent implements OnInit {
       this.coutryNames = this.countries.map(country => country.translations.spa.common);
     });
     this.service.getCountries();
+  }
+
+  handleSelect(event: any) {
+    console.log(event);
+  }
+
+
+  handleDropDownSelect(index: number) {
+    this.finalCountry = this.countries.find(c => c.cca3 === this.selectedCountry.borders[index]);
+  }
+
+  handleKeyUp(event: any) {
+    if (event.key === 'Enter') {
+      // find country
+      this.selectedCountry = this.countries.find(c => c.translations.spa.common === event.target.value);
+      if(this.selectedCountry === undefined) {
+        this.error = true;        
+      }else {
+        console.log('Country: ' + this.selectedCountry.borders);
+        this.borderCountries = this.selectedCountry.borders.map((border: string) => {
+          let result = this.countries.find(c => c.cca3 === border);
+          if(result !== undefined) {
+            return result.translations.spa.common;
+          }else {
+            return border;
+          }
+        }
+        );
+        console.log('Countries: ' + this.borderCountries);
+        
+      }
+    }else {
+      this.error = false;
+    }
+      
   }
 
 }
