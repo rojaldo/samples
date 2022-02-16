@@ -26,6 +26,7 @@ import { CountriesComponent } from './components/countries/countries/countries.c
 import { ContainerComponent } from './components/forms/container/container.component';
 import { TemplateValidationComponent } from './components/forms/template-validation/template-validation.component';
 import { ReactiveValidationComponent } from './components/forms/reactive-validation/reactive-validation.component';
+import { SwComponent } from './components/sw/sw/sw.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { ReactiveValidationComponent } from './components/forms/reactive-validat
     CountriesComponent,
     ContainerComponent,
     TemplateValidationComponent,
-    ReactiveValidationComponent
+    ReactiveValidationComponent,
+    SwComponent
   ],
   imports: [
     BrowserModule,

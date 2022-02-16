@@ -1,0 +1,5 @@
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let person of people; let i = index">{{i+1}}: {{person.name}}</li>
+</ul>
+<ngb-pagination [collectionSize]="count" [(page)]="page" aria-label="Default pagination" (pageChange)="handleChange()"></ngb-pagination>
+

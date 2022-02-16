@@ -30,6 +30,12 @@
         <app-container></app-container>
       </ng-template>
     </li>
+    <li [ngbNavItem]="6">
+      <a ngbNavLink>SW</a>
+      <ng-template ngbNavContent>
+        <app-sw></app-sw>
+      </ng-template>
+    </li>
   </ul>
 
   <div [ngbNavOutlet]="nav" class="mt-2"></div>
