@@ -17,16 +17,15 @@ import { HttpClientModule } from '@angular/common/http';
 import {YouTubePlayerModule} from '@angular/youtube-player';
 import { ApodShowComponent } from './components/apod/apod-show/apod-show.component';
 import { ApodPickerComponent } from './components/apod/apod-picker/apod-picker.component';
-import { BeersComponent } from './components/beers/beers/beers.component';
 import { ApodService } from './services/apod.service';
-import { NgxSliderModule } from '@angular-slider/ngx-slider';
-import { AbvPipe } from './pipes/abv.pipe';
-import { FromDatePipe } from './pipes/from-date.pipe';
 import { CountriesComponent } from './components/countries/countries/countries.component';
 import { ContainerComponent } from './components/forms/container/container.component';
 import { TemplateValidationComponent } from './components/forms/template-validation/template-validation.component';
 import { ReactiveValidationComponent } from './components/forms/reactive-validation/reactive-validation.component';
 import { SwComponent } from './components/sw/sw/sw.component';
+import { AppRoutingModule } from './app-routing.module';
+import { TrivialComponent } from './components/trivial/trivial/trivial.component';
+import { CardComponent } from './components/trivial/card/card.component';
 
 
 @NgModule({
@@ -41,14 +40,13 @@ import { SwComponent } from './components/sw/sw/sw.component';
     ApodComponent,
     ApodShowComponent,
     ApodPickerComponent,
-    BeersComponent,
-    AbvPipe,
-    FromDatePipe,
     CountriesComponent,
     ContainerComponent,
     TemplateValidationComponent,
     ReactiveValidationComponent,
-    SwComponent
+    SwComponent,
+    TrivialComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -56,8 +54,8 @@ import { SwComponent } from './components/sw/sw/sw.component';
     FormsModule,
     HttpClientModule,
     YouTubePlayerModule,
-    NgxSliderModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [HeroService, CalculatorService, ApodService],
   bootstrap: [AppComponent]

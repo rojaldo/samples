@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SwService } from 'src/app/services/sw.service';
 
 @Component({
@@ -12,11 +13,18 @@ export class SwComponent implements OnInit {
   count = 0;
   page = 1;
 
-  constructor(private service: SwService) { }
+  constructor(
+    private service: SwService, 
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.page = params['page'];
+    });
+
     this.service.people$.subscribe(people => {
-      this.people = this.service.people[this.page-1];
+      this.people = this.service.people[this.page - 1];
     });
     this.service.peopleCount$.subscribe(count => {
       this.count = count;
@@ -25,8 +33,10 @@ export class SwComponent implements OnInit {
   }
 
   handleChange() {
-
-    this.service.getSWPeople(this.page - 1);
+    console.log('page: ' + this.page);
+    if (this.page !== NaN) {
+      this.service.getSWPeople(this.page - 1);
+    }
   }
 
 }

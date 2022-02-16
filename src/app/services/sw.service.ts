@@ -30,7 +30,7 @@ export class SwService {
     }
     console.log(this.people[page] + ' : ' + {});
     // check if the page is already loaded
-    if (this.people[page].length === 0) {
+    if (this.people[page].length === 0 || this.people[page] === undefined) {
       console.log('getSWPeople(): ' + page);
       this.http.get('https://swapi.dev/api/people/?page=' + (page + 1)).subscribe(observer);
     } else {
