@@ -1,8 +1,10 @@
 <nav class="navbar fixed-bottom navbar-light bg-light mt-5">
     <div class="navbar-brand">Socre: {{score}}</div>
 </nav>
-<div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-4 my-2 " *ngFor="let card of cards; let i=index">
-        <app-card [card]="card" (onAnswer)="handleAnswer($event)"></app-card>
+<div class="container my-3">
+    <div class="row my-5">
+        <div class="col-sm-12 col-md-6 col-lg-4 my-2 " *ngFor="let card of cards; let i=index">
+            <app-card [card]="card" (onAnswer)="handleAnswer($event)"></app-card>
+        </div>
     </div>
 </div>
