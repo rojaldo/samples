@@ -1,6 +1,8 @@
-<div class="card">
-    <div class="card-body">
+<div class="card h-100">
+    <div class="card-body d-flex flex-column">
         <h4 class="card-title">{{card.question}}</h4>
-        <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block" *ngFor="let answer of card.answers">{{answer}}</button>
+        <div class="card-text ">
+            <button type="button" name="" id="" [class]="classes[i]" *ngFor="let answer of card.answers; let i=index" (click)="handleClick(answer)" [disabled]="card.responded">{{answer}}</button>
+        </div>
     </div>
 </div>
