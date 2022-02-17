@@ -1,8 +1,11 @@
 <div class="card h-100">
-    <div class="card-body d-flex flex-column">
+    <div class="card-body">
         <h4 class="card-title">{{card.question}}</h4>
-        <div class="card-text ">
-            <button type="button" name="" id="" [class]="classes[i]" *ngFor="let answer of card.answers; let i=index" (click)="handleClick(answer)" [disabled]="card.responded">{{answer}}</button>
-        </div>
     </div>
+    <div class="card-footer" id="myFooter">
+        <button type="button" name="" id="" [class]="classes[i] + ' align-bottom'"
+            *ngFor="let answer of card.answers; let i=index" (click)="handleClick(answer)"
+            [disabled]="card.responded">{{answer}}</button>
+    </div>
+
 </div>
